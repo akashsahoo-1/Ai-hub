@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  
+  --color-card: rgba(255, 255, 255, 0.05);
+  --color-card-hover: rgba(255, 255, 255, 0.1);
+  --color-border: rgba(255, 255, 255, 0.1);
+  
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+}
+
+@layer base {
+  body {
+    background: radial-gradient(circle at 50% -20%, #1a1a2e, #000000);
+    color: var(--color-foreground);
+    min-height: 100vh;
+  }
+}
+
+.glass-card {
+  background: var(--color-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(200%) skewX(12deg);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
