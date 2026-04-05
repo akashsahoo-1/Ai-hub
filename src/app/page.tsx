@@ -321,21 +321,82 @@ export default function PremiumDashboard() {
                   </div>
                 </div>
                 
-                <div className="p-6 space-y-6 flex-1 bg-gradient-to-b from-white/[0.02] to-transparent">
-                  <div className="flex items-center justify-between">
-                    <div className="space-y-2">
-                      <div className="h-6 w-32 bg-white/10 rounded-md animate-pulse" />
-                      <div className="h-2 w-20 bg-white/5 rounded-full" />
+                <style>{`
+                  @keyframes fadeInUp {
+                    from { opacity: 0; transform: translateY(14px); }
+                    to   { opacity: 1; transform: translateY(0); }
+                  }
+                  .preview-card {
+                    animation: fadeInUp 0.55s ease both;
+                  }
+                  .preview-card:nth-child(1) { animation-delay: 0.55s; }
+                  .preview-card:nth-child(2) { animation-delay: 0.70s; }
+                  .preview-card:nth-child(3) { animation-delay: 0.85s; }
+                  .preview-card:nth-child(4) { animation-delay: 1.00s; }
+                `}</style>
+
+                <div className="p-5 flex-1 bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col gap-3 justify-center">
+
+                  {/* Card 1 – Resume Builder */}
+                  <div className="preview-card flex items-center gap-3 rounded-xl px-4 py-3
+                    bg-white/[0.04] border border-white/[0.10]
+                    backdrop-blur-md
+                    shadow-[0_0_14px_-4px_rgba(99,102,241,0.25)]">
+                    <div className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-400 shadow-md">
+                      <FileText className="w-4 h-4 text-white" />
                     </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[11px] font-semibold text-white/90 leading-none mb-1">Resume Builder</p>
+                      <p className="text-[10px] text-gray-400 truncate">Akash – Frontend Developer</p>
+                    </div>
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="h-20 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-center p-4">
-                        <div className="h-2 w-1/3 bg-white/20 rounded-full mb-3" />
-                        <div className="h-3 w-2/3 bg-white/10 rounded-full" />
-                      </div>
-                    ))}
+
+                  {/* Card 2 – Notes Saver */}
+                  <div className="preview-card flex items-center gap-3 rounded-xl px-4 py-3
+                    bg-white/[0.04] border border-white/[0.10]
+                    backdrop-blur-md
+                    shadow-[0_0_14px_-4px_rgba(168,85,247,0.25)]">
+                    <div className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-br from-purple-500 to-indigo-400 shadow-md">
+                      <StickyNote className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[11px] font-semibold text-white/90 leading-none mb-1">Notes Saver</p>
+                      <p className="text-[10px] text-gray-400 truncate">Meeting notes saved successfully</p>
+                    </div>
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
                   </div>
+
+                  {/* Card 3 – YouTube Summarizer */}
+                  <div className="preview-card flex items-center gap-3 rounded-xl px-4 py-3
+                    bg-white/[0.04] border border-white/[0.10]
+                    backdrop-blur-md
+                    shadow-[0_0_14px_-4px_rgba(236,72,153,0.25)]">
+                    <div className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-br from-pink-500 to-rose-400 shadow-md">
+                      <Youtube className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[11px] font-semibold text-white/90 leading-none mb-1">YouTube Summarizer</p>
+                      <p className="text-[10px] text-gray-400 truncate">Video summarized in 30 seconds</p>
+                    </div>
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-pink-400 animate-pulse" />
+                  </div>
+
+                  {/* Card 4 – Job Search */}
+                  <div className="preview-card flex items-center gap-3 rounded-xl px-4 py-3
+                    bg-white/[0.04] border border-white/[0.10]
+                    backdrop-blur-md
+                    shadow-[0_0_14px_-4px_rgba(16,185,129,0.25)]">
+                    <div className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-br from-emerald-500 to-teal-400 shadow-md">
+                      <Briefcase className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[11px] font-semibold text-white/90 leading-none mb-1">Job Search</p>
+                      <p className="text-[10px] text-gray-400 truncate">3 new jobs found</p>
+                    </div>
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  </div>
+
                 </div>
               </div>
             </motion.div>
